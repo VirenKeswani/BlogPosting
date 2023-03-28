@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.top-bg{
+    background: url(../images/bg.jpg) no-repeat center center/cover;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(25, 1, 34, 0.784);
+    background-blend-mode: multiply;
+    color: #fff;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left-bg{
+    /* align GrandArchives to left and give proper font */
+    font-family: 'Lobster', cursive;
+    margin-left: 10em;
+    font-size: 1em; /* Set the font size of the parent element */
+}
+.left-bg p{
+    font-size: 5.5em !important; /* Set the font size of the text using em units */
+    font-weight: 600;
+}
+.btn1{
+    /* remove the background and grow on hover */
+    background: none;
+    border: none;
+    font-size: 3.5rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* animation scale change on hover */
+    transition: all .2s;
+    display: block;
+}
+.btn1:hover{
+    transform: scale(1.1);
+    color: #d38dff;
+}
+.blg-svg{
+    /* add blog svg and align to right */
+    margin: 10em;
+}
+.heading-text{
+    margin-top: 2em;
+    /* Attractive font */
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 2em;
+}
+.blog-design{
+    /* for each Blog add outline and interactive design */
+    border: 1px solid #350646;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+    margin-inline: 10em;
+    /* margin-inline: 10em; */
+    transition: all .2s;
+    cursor: pointer;
+}
+.blog-design:hover{
+    /* change the color of the outline on hover */
+    border: 1px solid #d38dff;
+    transform: scale(1.1);
+}
+/* design for title author and a */
+.blog-design h2{
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+    font-weight: 600;
+}
+.blog-design h3{
+    font-family: 'Lobster', cursive;
+    font-size: 1em;
+    font-weight: 100;
+}
+.blog-design a{
+    font-family: 'Lobster', cursive;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #d38dff;
+    text-decoration: none;
+}
+/* ============================================== */
+.Blogs{
+    /* Simple Blog display page with all info no bg*/
+    background-color: #350646;
+    color: #fff;
+    height: 100vh;
+    width: auto;   
+    background-color: rgba(25, 1, 34, 0.784);
+
+}
+
+/* Page to display the blog ith titile along with author and then the text
+in the end the last update and then in one line the edit and delete buttons */
+.Blogs{
+    /* Simple Blog display page with all info no bg*/
+    background-color: #350646;
+    color: #fff;
+    height: 100vh;
+    width: auto;   
+    background-color: rgba(25, 1, 34, 0.784);
+}
+.Blogs h1{
+    /* title of the blog */
+    font-family: 'Lobster', cursive;
+    font-size: 4.5em;
+    font-weight: 600;
+    margin-bottom: .1em;
+    /* center of the page */
+    text-align: center;
+    margin-top: 1em;
+
+}
+.Blogs h3{
+    /* author of the blog */
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    font-weight: 0;
+    margin-bottom: 2em;
+    /* center of the page */
+    text-align: center;
+    margin-top: 0em;
+}
+
+.Blogs p{
+    /* text of the blog */
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    font-weight: 0;
+    margin-bottom: 2em;
+    /* center of the page */
+    text-align: center;
+    margin-top: 0em;
+    margin-inline: 5em;
+
+}
+.Blogs article{
+    /* text of the blog */
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
+    font-weight: 0;
+    margin-bottom: 2em;
+    /* center of the page */
+    text-align: left;
+    margin-top: 0em;
+    margin-inline: 10em;
+
+
+}
+.center{
+    /* center of the page */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.btn2{
+    /* remove the background and grow on hover */
+    background: none;
+    
+    border: none;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* animation scale change on hover */
+    transition: all .2s;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #d38dff;
+    padding: .1em;
+    padding-inline: 1em;
+    border-radius: 10px;
+    width: auto;
+    margin-bottom: 1em;
+
+}
+.btn2:hover{
+    transform: scale(1.1);
+    color: #d38dff;
+}
+/* ============================================== */
+/* form design for title author input section and text area to enter blog  */
+.formdesign{
+    /* Simple Blog display page with all info no bg*/
+    background-color: #23032f;
+    color: #fff;
+    height: 100vh;
+    width: auto;   
+    background-color: rgba(18, 1, 24, 0.928);
+}
+.formdesign h1{
+    /* title of the blog */
+    font-family: 'Lobster', cursive;
+    font-size: 4.5em;
+    font-weight: 600;
+    margin-bottom: .1em;
+    /* center of the page */
+    text-align: center;
+    margin-top: 1em;
+}
+/* input fields in proper design */
+.frmtxt{
+    /* remove the background and grow on hover */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* animation scale change on hover */
+    transition: all .2s;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #d38dff;
+    padding: .1em;
+    padding-inline: 1em;
+    border-radius: 10px;
+    width: auto;
+    margin-bottom: 1em;
+    /* center them */
+    text-align: center;
+    /* flex center the form items */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2em;
+    width: 60vw;
+}
+/* text area large enough to enter text */
+.formdesign textarea{
+    /* remove the background and grow on hover */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* animation scale change on hover */
+    transition: all .2s;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #d38dff;
+    padding: 1em;
+    padding-inline: 1em;
+    border-radius: 10px;
+    width: auto;
+    margin-bottom: 1em;
+    /* center them */
+    text-align: center;
+    /* flex center the form items */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2em;
+    height: 20em;
+    width: 60vw;
+}
+.btn3{
+    /* remove the background and grow on hover */
+    background: none;
+
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* animation scale change on hover */
+    transition: all .2s;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #d38dff;
+    padding: .1em;
+    padding-inline: 10em;
+    border-radius: 10px;
+    width: auto;
+    margin-bottom: 1em;
+    /* center them */
+    text-align: center;
+    width: 60vw;
+    margin-top: 2em;
+    background: #23032f;
+
+}
+.btn3:hover{
+    transform: scale(1.1);
+    color: #d38dff;
+}
