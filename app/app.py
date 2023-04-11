@@ -39,6 +39,7 @@ def add_todo():
     Author = request.form['Author']
     Title = request.form['Title']
     Blog = request.form['Blog']
+    password = request.form['pass']
     Date = datetime.datetime.now()
     Date = str(Date.strftime("%d/%m/%Y %H:%M:%S"))
     id = uuid.uuid4().hex
@@ -47,7 +48,8 @@ def add_todo():
         'Author': Author,
         'Title': Title,
         'Blog': Blog,
-        'Date': Date
+        'Date': Date,
+        'password' : password
     }
     #current date and timestap
    
@@ -60,7 +62,14 @@ def add_todo():
 
 @app.route('/delete/<id>', methods=['GET'])
 def delete_blog(id):
-
+    #ask password and verify if same as the one in firestore then only delete
+    #get data from firestore and pass it to update.html
+    doc = todo_ref.document(id).get()
+    data = doc.to_dict()
+    #find password in data
+    password = data['password']
+    print("data is ",password)
+    
     #delete data from firestore
     todo_ref.document(id).delete()
 
@@ -82,21 +91,30 @@ def update_blog(id):
     Author = request.form['Author']
     Title = request.form['Title']
     Blog = request.form['Blog']
-    
+    password = request.form['pass']
     Date = datetime.datetime.now()
-    Date = str(Date.strftime("%d/%m/%Y %H:%M:%S"))
-    data = {
-        'Author': Author,
-        'Title': Title,
-        'Blog': Blog,
-        'Date': Date
-    }
-    #update data in firestore
-    todo_ref.document(id).update(data)
-    # return jsonify({"success": True}), 200
+    # check if password is same as the one in firestore only then update or else thorw error
+    data = todo_ref.document(id).get().to_dict()
+    if password == data['password']:
+        print("password matched")
+        Date = str(Date.strftime("%d/%m/%Y %H:%M:%S"))
+        data = {
+            'Author': Author,
+            'Title': Title,
+            'Blog': Blog,
+            'Date': Date
+        }
+        #update data in firestore
+        todo_ref.document(id).update(data)
+        # return jsonify({"success": True}), 200
 
-    print("data is ",data)
-    return redirect('/')
+        print("data is ",data)
+        return redirect('/')
+    else:
+        print("password not matched")
+    #    throw error in html and back to update.html
+    return render_template('update.html', data=data)
+
 
 @app.route('/blog/<id>', methods=['GET'])
 def render_blog(id):
@@ -104,6 +122,7 @@ def render_blog(id):
     doc = todo_ref.document(id).get()
     data = doc.to_dict()
     print("data is ",data)
+    
     return render_template('blog.html', data=data)
 
 if __name__ == '__main__':

@@ -19,7 +19,9 @@
         <article>Last Update : {{data.Date}}</article>
     </div>
     <div class="center">
-        <a class="btn2" href="/delete/{{data._id}}">Delete</a>
+        <!-- <a class="btn2" name="del" onclick="chec">Delete</a> -->
+        <!-- send on click data to js -->
+        <a class="btn2" name="del" onclick="check({{data}})">Delete</a>
         <a class="btn2" href="/edit/{{data._id}}">Edit</a>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -35,6 +37,24 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+//   ask user for password and send it to app.py
+    function check(data){
+        var pass = prompt("Enter Password");
+        console.log(data);
+        if(pass == data.password){
+            // if true run redirect to /delete/{{data._id}}
+            window.location.href = "/delete/"+data._id;
+
+            return true;
+        }
+        else{
+            alert("Wrong Password");
+           
+            check();
+        }
+    }
+
+    
 </script>
 </body>
 </html>
